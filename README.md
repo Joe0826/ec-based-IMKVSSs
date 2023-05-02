@@ -67,7 +67,7 @@ If you want to test and develop locally, you need to install these dependency pa
 
 3. For the hybrid mode based on Memcached, you need install project dependencies:
     
-    给一个readme的链接
+    [memcached_cluster](https://github.com/Joe0826/ec-based-IMKVSSs/blob/main/memcached_cluster/README.md)
 
 4. For the Full-encoding
     
