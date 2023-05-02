@@ -1,0 +1,220 @@
+[WARN]  Running against a source checkout. In order to get our runtime dependencies we'll have to invoke Maven. Depending on the state of your system, this may take ~30-45 seconds
+[DEBUG]  Running 'mvn -pl com.yahoo.ycsb:memec-binding -am package -DskipTests dependency:build-classpath -DincludeScope=compile -Dmdep.outputFilterFile=true'
+java -cp /home/xcq/imkv/ycsb/memec/conf:/home/xcq/imkv/ycsb/memec/target/memec-binding-0.7.0.jar:/home/xcq/imkv/ycsb/core/target/core-0.7.0.jar:/home/xcq/.m2/repository/org/hdrhistogram/HdrHistogram/2.1.4/HdrHistogram-2.1.4.jar:/home/xcq/.m2/repository/org/codehaus/jackson/jackson-mapper-asl/1.9.4/jackson-mapper-asl-1.9.4.jar:/home/xcq/.m2/repository/org/codehaus/jackson/jackson-core-asl/1.9.4/jackson-core-asl-1.9.4.jar com.yahoo.ycsb.Client -db com.yahoo.ycsb.db.MemECApplication -P /home/xcq/imkv/ycsb/workloads/workloada -p fieldcount=1 -p readallfields=false -p scanproportion=0 -p table=u -p fieldlength=200 -p requestdistribution=zipfian -p recordcount=100 -p insertstart=75 -p insertcount=25 -p threadcount=64 -p memec.host=172.19.0.23 -p memec.port=9112 -p memec.key_size=255 -p memec.chunk_size=4096 -load
+YCSB Client 0.1
+Command line: -db com.yahoo.ycsb.db.MemECApplication -P /home/xcq/imkv/ycsb/workloads/workloada -p fieldcount=1 -p readallfields=false -p scanproportion=0 -p table=u -p fieldlength=200 -p requestdistribution=zipfian -p recordcount=100 -p insertstart=75 -p insertcount=25 -p threadcount=64 -p memec.host=172.19.0.23 -p memec.port=9112 -p memec.key_size=255 -p memec.chunk_size=4096 -load
+Loading workload...
+Starting test.
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+MemEC.set(): [Error] Request failed.
+MemEC.set(): [Error] Request failed.
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+MemEC.set(): [Error] Request failed.
+MemEC.set(): [Error] Request failed.
+MemEC.set(): [Error] Request failed.
+MemEC.set(): [Error] Request failed.
+MemEC.set(): [Error] Request failed.
+MemEC.set(): [Error] Request failed.
+MemEC.set(): [Error] Request failed.
+MemEC.set(): [Error] Request failed.
+MemEC.set(): [Error] Request failed.
+MemEC.set(): [Error] Request failed.
+MemEC.set(): [Error] Request failed.
+MemEC.set(): [Error] Request failed.
+MemEC.set(): [Error] Request failed.
+MemEC.set(): [Error] Request failed.
+MemEC.set(): [Error] Request failed.
+MemEC.set(): [Error] Request failed.
+MemEC.set(): [Error] Request failed.
+MemEC.set(): [Error] Request failed.
+MemEC.set(): [Error] Request failed.
+MemEC.set(): [Error] Request failed.
+MemEC.set(): [Error] Request failed.
+MemEC.set(): [Error] Request failed.
+MemEC.set(): [Error] Request failed.
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+MemEC.set(): [Error] Request failed.
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+MemEC.set(): [Error] Request failed.
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+MemEC.set(): [Error] Request failed.
+MemEC.set(): [Error] Request failed.
+MemEC.set(): [Error] Request failed.
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+MemEC.set(): [Error] Request failed.
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+MemEC.set(): [Error] Request failed.
+MemEC.set(): [Error] Request failed.
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+MemEC.set(): [Error] Request failed.
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+MemEC.set(): [Error] Request failed.
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+MemEC.set(): [Error] Request failed.
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+MemEC.set(): [Error] Request failed.
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+MemEC.set(): [Error] Request failed.
+MemEC.set(): [Error] Request failed.
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+MemEC.set(): [Error] Request failed.
+MemEC.set(): [Error] Request failed.
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+MemEC.set(): [Error] Request failed.
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+MemEC.set(): [Error] Request failed.
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+MemEC.set(): [Error] Request failed.
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+MemEC.set(): [Error] Request failed.
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+MemEC.set(): [Error] Request failed.
+MemEC.set(): [Error] Request failed.
+MemEC.set(): [Error] Request failed.
+MemEC.set(): [Error] Request failed.
+MemEC.set(): [Error] Request failed.
+MemEC.set(): [Error] Request failed.
+MemEC.set(): [Error] Request failed.
+MemEC.set(): [Error] Request failed.
+MemEC.set(): [Error] Request failed.
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+MemEC.set(): [Error] Request failed.
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+MemEC.set(): [Error] Request failed.
+MemEC.set(): [Error] Request failed.
+MemEC.set(): [Error] Request failed.
+MemEC.set(): [Error] Request failed.
+MemEC.set(): [Error] Request failed.
+MemEC.set(): [Error] Request failed.
+MemEC.set(): [Error] Request failed.
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+MemEC.set(): [Error] Request failed.
+MemEC.set(): [Error] Request failed.
+Error inserting, not retrying any more. number of attempts: 1Insertion Retry Limit: 0
+Error inserting, not retrying any more. number of attempts: 1Insertion Retry Limit: 0
+Error inserting, not retrying any more. number of attempts: 1Insertion Retry Limit: 0
+Error inserting, not retrying any more. number of attempts: 1Insertion Retry Limit: 0
+Error inserting, not retrying any more. number of attempts: 1Insertion Retry Limit: 0
+Error inserting, not retrying any more. number of attempts: 1Insertion Retry Limit: 0
+Error inserting, not retrying any more. number of attempts: 1Insertion Retry Limit: 0
+Error inserting, not retrying any more. number of attempts: 1Insertion Retry Limit: 0
+Error inserting, not retrying any more. number of attempts: 1Insertion Retry Limit: 0
+Error inserting, not retrying any more. number of attempts: 1Insertion Retry Limit: 0
+Error inserting, not retrying any more. number of attempts: 1Insertion Retry Limit: 0
+Error inserting, not retrying any more. number of attempts: 1Insertion Retry Limit: 0
+Error inserting, not retrying any more. number of attempts: 1Insertion Retry Limit: 0
+Error inserting, not retrying any more. number of attempts: 1Insertion Retry Limit: 0
+Error inserting, not retrying any more. number of attempts: 1Insertion Retry Limit: 0
+Error inserting, not retrying any more. number of attempts: 1Insertion Retry Limit: 0
+Error inserting, not retrying any more. number of attempts: 1Insertion Retry Limit: 0
+Error inserting, not retrying any more. number of attempts: 1Insertion Retry Limit: 0
+Error inserting, not retrying any more. number of attempts: 1Insertion Retry Limit: 0
+Error inserting, not retrying any more. number of attempts: 1Insertion Retry Limit: 0
+Error inserting, not retrying any more. number of attempts: 1Insertion Retry Limit: 0
+Error inserting, not retrying any more. number of attempts: 1Insertion Retry Limit: 0
+Error inserting, not retrying any more. number of attempts: 1Insertion Retry Limit: 0
+Error inserting, not retrying any more. number of attempts: 1Insertion Retry Limit: 0
+Error inserting, not retrying any more. number of attempts: 1Insertion Retry Limit: 0
+Error inserting, not retrying any more. number of attempts: 1Insertion Retry Limit: 0
+Error inserting, not retrying any more. number of attempts: 1Insertion Retry Limit: 0
+Error inserting, not retrying any more. number of attempts: 1Insertion Retry Limit: 0
+Error inserting, not retrying any more. number of attempts: 1Insertion Retry Limit: 0
+Error inserting, not retrying any more. number of attempts: 1Insertion Retry Limit: 0
+Error inserting, not retrying any more. number of attempts: 1Insertion Retry Limit: 0
+Error inserting, not retrying any more. number of attempts: 1Insertion Retry Limit: 0
+Error inserting, not retrying any more. number of attempts: 1Insertion Retry Limit: 0
+Error inserting, not retrying any more. number of attempts: 1Insertion Retry Limit: 0
+Error inserting, not retrying any more. number of attempts: 1Insertion Retry Limit: 0
+Error inserting, not retrying any more. number of attempts: 1Insertion Retry Limit: 0
+Error inserting, not retrying any more. number of attempts: 1Insertion Retry Limit: 0
+Error inserting, not retrying any more. number of attempts: 1Insertion Retry Limit: 0
+Error inserting, not retrying any more. number of attempts: 1Insertion Retry Limit: 0
+Error inserting, not retrying any more. number of attempts: 1Insertion Retry Limit: 0
+Error inserting, not retrying any more. number of attempts: 1Insertion Retry Limit: 0
+Error inserting, not retrying any more. number of attempts: 1Insertion Retry Limit: 0
+Error inserting, not retrying any more. number of attempts: 1Insertion Retry Limit: 0
+Error inserting, not retrying any more. number of attempts: 1Insertion Retry Limit: 0
+Error inserting, not retrying any more. number of attempts: 1Insertion Retry Limit: 0
+Error inserting, not retrying any more. number of attempts: 1Insertion Retry Limit: 0
+Error inserting, not retrying any more. number of attempts: 1Insertion Retry Limit: 0
+Error inserting, not retrying any more. number of attempts: 1Insertion Retry Limit: 0
+Error inserting, not retrying any more. number of attempts: 1Insertion Retry Limit: 0
+Error inserting, not retrying any more. number of attempts: 1Insertion Retry Limit: 0
+Error inserting, not retrying any more. number of attempts: 1Insertion Retry Limit: 0
+Error inserting, not retrying any more. number of attempts: 1Insertion Retry Limit: 0
+Error inserting, not retrying any more. number of attempts: 1Insertion Retry Limit: 0
+Error inserting, not retrying any more. number of attempts: 1Insertion Retry Limit: 0
+Error inserting, not retrying any more. number of attempts: 1Insertion Retry Limit: 0
+Error inserting, not retrying any more. number of attempts: 1Insertion Retry Limit: 0
+Error inserting, not retrying any more. number of attempts: 1Insertion Retry Limit: 0
+Error inserting, not retrying any more. number of attempts: 1Insertion Retry Limit: 0
+Error inserting, not retrying any more. number of attempts: 1Insertion Retry Limit: 0
+Error inserting, not retrying any more. number of attempts: 1Insertion Retry Limit: 0
+Error inserting, not retrying any more. number of attempts: 1Insertion Retry Limit: 0
+Error inserting, not retrying any more. number of attempts: 1Insertion Retry Limit: 0
+Error inserting, not retrying any more. number of attempts: 1Insertion Retry Limit: 0
+Error inserting, not retrying any more. number of attempts: 1Insertion Retry Limit: 0
+[OVERALL], RunTime(ms), 84.0
+[OVERALL], Throughput(ops/sec), 0.0
+[CLEANUP], Operations, 64.0
+[CLEANUP], AverageLatency(us), 32.8125
+[CLEANUP], MinLatency(us), 10.0
+[CLEANUP], MaxLatency(us), 194.0
+[CLEANUP], 95thPercentileLatency(us), 146.0
+[CLEANUP], 99thPercentileLatency(us), 159.0
+[INSERT], Operations, 0.0
+[INSERT], AverageLatency(us), NaN
+[INSERT], MinLatency(us), 9.223372036854776E18
+[INSERT], MaxLatency(us), 0.0
+[INSERT], 95thPercentileLatency(us), 0.0
+[INSERT], 99thPercentileLatency(us), 0.0
+[INSERT], Return=ERROR, 64
+[INSERT-FAILED], Operations, 64.0
+[INSERT-FAILED], AverageLatency(us), 3274.34375
+[INSERT-FAILED], MinLatency(us), 243.0
+[INSERT-FAILED], MaxLatency(us), 12807.0
+[INSERT-FAILED], 95thPercentileLatency(us), 8335.0
+[INSERT-FAILED], 99thPercentileLatency(us), 10607.0
