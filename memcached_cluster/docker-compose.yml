@@ -1,0 +1,407 @@
+version: '3'
+services:
+  m1:
+    build: ./memcached
+    image: memca1:v1
+    container_name: m1
+    deploy:
+      resources:
+        limits:
+          memory: 4G
+    user: xcq
+    hostname: memca1
+    volumes:
+      - ./scripts:/home/xcq/workspace/memcached
+    ports:
+      - "11311:11211"
+      - "11511:22"
+    networks:
+      memcached_net:
+        ipv4_address: 172.20.0.2
+    tty: true
+    command: ["bash","start-memcached.sh"]
+
+  m2:
+    build: ./memcached
+    image: memca2:v1
+    container_name: m2
+    deploy:
+      resources:
+        limits:
+          memory: 4G
+    user: xcq
+    hostname: memca2
+    volumes:
+      - ./scripts:/home/xcq/workspace/memcached
+    ports:
+      - "11312:11211"
+      - "11512:22"
+    networks:
+      memcached_net:
+        ipv4_address: 172.20.0.3
+    tty: true
+    command: ["bash","start-memcached.sh"]
+
+  m3:
+    build: ./memcached
+    image: memca3:v1
+    container_name: m3
+    deploy:
+      resources:
+        limits:
+          memory: 4G
+    user: xcq
+    hostname: memca3
+    volumes:
+      - ./scripts:/home/xcq/workspace/memcached
+    ports:
+      - "11313:11211"
+      - "11513:22"
+    networks:
+      memcached_net:
+        ipv4_address: 172.20.0.4
+    tty: true
+    command: ["bash","start-memcached.sh"]
+
+  m4:
+    build: ./memcached
+    image: memca4:v1
+    container_name: m4
+    deploy:
+      resources:
+        limits:
+          memory: 4G
+    user: xcq
+    hostname: memca4
+    volumes:
+      - ./scripts:/home/xcq/workspace/memcached
+    ports:
+      - "11314:11211"
+      - "11514:22"
+    networks:
+      memcached_net:
+        ipv4_address: 172.20.0.5
+    tty: true
+    command: ["bash","start-memcached.sh"]
+
+  m5:
+    build: ./memcached
+    image: memca5:v1
+    container_name: m5
+    deploy:
+      resources:
+        limits:
+          memory: 4G
+    user: xcq
+    hostname: memca5
+    volumes:
+      - ./scripts:/home/xcq/workspace/memcached
+    ports:
+      - "11315:11211"
+      - "11515:22"
+    networks:
+      memcached_net:
+        ipv4_address: 172.20.0.6
+    tty: true
+    command: [ "bash","start-memcached.sh" ]
+
+  m6:
+    build: ./memcached
+    image: memca6:v1
+    container_name: m6
+    deploy:
+      resources:
+        limits:
+          memory: 4G
+    user: xcq
+    hostname: memca6
+    volumes:
+      - ./scripts:/home/xcq/workspace/memcached
+    ports:
+      - "11316:11211"
+      - "11516:22"
+    networks:
+      memcached_net:
+        ipv4_address: 172.20.0.7
+    tty: true
+    command: [ "bash","start-memcached.sh" ]
+
+  m7:
+    build: ./memcached
+    image: memca7:v1
+    container_name: m7
+    deploy:
+      resources:
+        limits:
+          memory: 4G
+    user: xcq
+    hostname: memca7
+    volumes:
+      - ./scripts:/home/xcq/workspace/memcached
+    ports:
+      - "11317:11211"
+      - "11517:22"
+    networks:
+      memcached_net:
+        ipv4_address: 172.20.0.8
+    tty: true
+    command: [ "bash","start-memcached.sh" ]
+
+  m8:
+    build: ./memcached
+    image: memca8:v1
+    container_name: m8
+    deploy:
+      resources:
+        limits:
+          memory: 4G
+    user: xcq
+    hostname: memca8
+    volumes:
+      - ./scripts:/home/xcq/workspace/memcached
+    ports:
+      - "11318:11211"
+      - "11518:22"
+    networks:
+      memcached_net:
+        ipv4_address: 172.20.0.9
+    tty: true
+    command: [ "bash","start-memcached.sh" ]
+
+  m9:
+    build: ./memcached
+    image: memca9:v1
+    container_name: m9
+    deploy:
+      resources:
+        limits:
+          memory: 4G
+    user: xcq
+    hostname: memca9
+    volumes:
+      - ./scripts:/home/xcq/workspace/memcached
+    ports:
+      - "11319:11211"
+      - "11519:22"
+    networks:
+      memcached_net:
+        ipv4_address: 172.20.0.10
+    tty: true
+    command: [ "bash","start-memcached.sh" ]
+
+  m10:
+    build: ./memcached
+    image: memca10:v1
+    container_name: m10
+    deploy:
+      resources:
+        limits:
+          memory: 4G
+    user: xcq
+    hostname: memca10
+    volumes:
+      - ./scripts:/home/xcq/workspace/memcached
+    ports:
+      - "11320:11211"
+      - "11520:22"
+    networks:
+      memcached_net:
+        ipv4_address: 172.20.0.11
+    tty: true
+    command: [ "bash","start-memcached.sh" ]
+
+  m11:
+    build: ./memcached
+    image: memca11:v1
+    container_name: m11
+    deploy:
+      resources:
+        limits:
+          memory: 4G
+    user: xcq
+    hostname: memca11
+    volumes:
+      - ./scripts:/home/xcq/workspace/memcached
+    ports:
+      - "11321:11211"
+      - "11521:22"
+    networks:
+      memcached_net:
+        ipv4_address: 172.20.0.12
+    tty: true
+    command: [ "bash","start-memcached.sh" ]
+
+  m12:
+    build: ./memcached
+    image: memca12:v1
+    container_name: m12
+    deploy:
+      resources:
+        limits:
+          memory: 4G
+    user: xcq
+    hostname: memca12
+    volumes:
+      - ./scripts:/home/xcq/workspace/memcached
+    ports:
+      - "11322:11211"
+      - "11522:22"
+    networks:
+      memcached_net:
+        ipv4_address: 172.20.0.13
+    tty: true
+    command: [ "bash","start-memcached.sh" ]
+
+  m13:
+    build: ./memcached
+    image: memca13:v1
+    container_name: m13
+    deploy:
+      resources:
+        limits:
+          memory: 4G
+    user: xcq
+    hostname: memca13
+    volumes:
+      - ./scripts:/home/xcq/workspace/memcached
+    ports:
+      - "11323:11211"
+      - "11523:22"
+    networks:
+      memcached_net:
+        ipv4_address: 172.20.0.14
+    tty: true
+    command: [ "bash","start-memcached.sh" ]
+
+  m14:
+    build: ./memcached
+    image: memca14:v1
+    container_name: m14
+    deploy:
+      resources:
+        limits:
+          memory: 4G
+    user: xcq
+    hostname: memca14
+    volumes:
+      - ./scripts:/home/xcq/workspace/memcached
+    ports:
+      - "11324:11211"
+      - "11524:22"
+    networks:
+      memcached_net:
+        ipv4_address: 172.20.0.15
+    tty: true
+    command: [ "bash","start-memcached.sh" ]
+
+  m15:
+    build: ./memcached
+    image: memca15:v1
+    container_name: m15
+    deploy:
+      resources:
+        limits:
+          memory: 4G
+    user: xcq
+    hostname: memca15
+    volumes:
+      - ./scripts:/home/xcq/workspace/memcached
+    ports:
+      - "11325:11211"
+      - "11525:22"
+    networks:
+      memcached_net:
+        ipv4_address: 172.20.0.16
+    tty: true
+    command: [ "bash","start-memcached.sh" ]
+
+  m16:
+    build: ./memcached
+    image: memca16:v1
+    container_name: m16
+    deploy:
+      resources:
+        limits:
+          memory: 4G
+    user: xcq
+    hostname: memca16
+    volumes:
+      - ./scripts:/home/xcq/workspace/memcached
+    ports:
+      - "11326:11211"
+      - "11526:22"
+    networks:
+      memcached_net:
+        ipv4_address: 172.20.0.17
+    tty: true
+    command: [ "bash","start-memcached.sh" ]
+
+  m30:
+    build: ./memcached
+    image: parity1:v1
+    container_name: p1
+    deploy:
+      resources:
+        limits:
+          memory: 4G
+    user: xcq
+    hostname: parity1
+    volumes:
+      - ./scripts:/home/xcq/workspace/memcached
+    ports:
+      - "11340:11211"
+      - "11540:22"
+    networks:
+      memcached_net:
+        ipv4_address: 172.20.0.30
+    tty: true
+    command: [ "bash","start-memcached.sh" ]
+
+  m31:
+    build: ./memcached
+    image: parity2:v1
+    container_name: p2
+    deploy:
+      resources:
+        limits:
+          memory: 4G
+    user: xcq
+    hostname: parity2
+    volumes:
+      - ./scripts:/home/xcq/workspace/memcached
+    ports:
+      - "11341:11211"
+      - "11541:22"
+    networks:
+      memcached_net:
+       ipv4_address: 172.20.0.31
+    tty: true
+    command: [ "bash","start-memcached.sh" ]
+
+  m32:
+    build: ./memcached
+    image: parity3:v1
+    container_name: p3
+    deploy:
+      resources:
+        limits:
+          memory: 4G
+    user: xcq
+    hostname: parity3
+    volumes:
+      - ./scripts:/home/xcq/workspace/memcached
+    ports:
+      - "11342:11211"
+      - "11542:22"
+    tty: true
+    networks:
+      memcached_net:
+         ipv4_address: 172.20.0.32
+    command: [ "bash","start-memcached.sh" ]
+
+networks:
+  memcached_net:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.20.0.0/16
