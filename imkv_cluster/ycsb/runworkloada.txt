@@ -1,0 +1,11 @@
+/home/xcq/imkv/ycsb/run.sh: line 23: [: ==: unary operator expected
+[WARN]  Running against a source checkout. In order to get our runtime dependencies we'll have to invoke Maven. Depending on the state of your system, this may take ~30-45 seconds
+[DEBUG]  Running 'mvn -pl com.yahoo.ycsb:memec-binding -am package -DskipTests dependency:build-classpath -DincludeScope=compile -Dmdep.outputFilterFile=true'
+Traceback (most recent call last):
+  File "/home/xcq/imkv/ycsb/bin/ycsb", line 261, in <module>
+    sys.exit(main())
+  File "/home/xcq/imkv/ycsb/bin/ycsb", line 234, in main
+    maven_says = get_classpath_from_maven(project)
+  File "/home/xcq/imkv/ycsb/bin/ycsb", line 180, in get_classpath_from_maven
+    + err.output)
+TypeError: cannot concatenate 'str' and 'NoneType' objects

@@ -1,0 +1,736 @@
+version: '3'
+services:
+  coordinator:
+    build: ./coordinator
+    image: coor:v1       #由dockerfile临时生成的镜像名字
+    deploy:
+      resources:
+        limits:
+          memory: 4G
+    user: xcq
+    container_name: coordinator
+    hostname: coor1
+    volumes:
+      - ./coordinator:/home/xcq/imkv/coordinator/
+      - ./config:/home/xcq/imkv/config
+      #- ./coordinator/config:/home/xcq/imkv/coordinator/config
+    ports:
+      - "9110:9110"
+      - "19110:22"
+    networks:
+      imkv_net:
+        ipv4_address: 172.19.0.2
+    tty: true
+    command: ["bash","start-coordinator.sh"]
+
+  s1:
+    build: ./server
+    image: s1:v1     #由dockerfile临时生成的镜像名字
+    deploy:
+      resources:
+        limits:
+          memory: 4G
+    user: xcq
+    container_name: s1
+    hostname: s1
+    tmpfs:
+      - /home/xcq/tmp/s1:rw,size=2g,uid=1000,gid=1000,mode=777
+    volumes:
+      - ./server:/home/xcq/imkv/server/
+      - ./config:/home/xcq/imkv/config
+      - ./data:/home/xcq/imkv/data
+      - ./tmp:/home/xcq/imkv/tmp
+      #- ./server/config:/home/xcq/imkv/server/config
+    ports:
+      - "9111:9111"
+      - "19111:22"
+     # - "4803:4803"
+    depends_on:
+      - coordinator
+    cap_add:
+      - NET_ADMIN
+    networks:
+      imkv_net:
+        ipv4_address: 172.19.0.3
+    tty: true
+    command: ["bash","start-server.sh"]
+
+  s2:
+    build: ./server
+    image: s2:v1     #由dockerfile临时生成的镜像名字
+    deploy:
+      resources:
+        limits:
+          memory: 4G
+    user: xcq
+    container_name: s2
+    hostname: s2
+    tmpfs:
+      - /home/xcq/tmp/s2:rw,size=2g,uid=1000,gid=1000,mode=777
+    volumes:
+      - ./server:/home/xcq/imkv/server/
+      - ./config:/home/xcq/imkv/config
+      - ./data:/data
+      - ./tmp/memec:/home/xcq/tmp
+      #- ./server/config:/home/xcq/imkv/server/config
+    ports:
+      - "9112:9111"
+      - "19112:22"
+     # - "4803:4803"
+    depends_on:
+      - coordinator
+      - s1
+    cap_add:
+      - NET_ADMIN
+    networks:
+      imkv_net:
+        ipv4_address: 172.19.0.4
+    tty: true
+    command: ["bash","start-server.sh"]
+
+  s3:
+    build: ./server
+    image: s3:v1        #由dockerfile临时生成的镜像名字
+    deploy:
+      resources:
+        limits:
+          memory: 4G
+    user: xcq
+    container_name: s3
+    hostname: s3
+    tmpfs:
+      - /home/xcq/tmp/s3:rw,size=2g,uid=1000,gid=1000,mode=777
+    volumes:
+      - ./server:/home/xcq/imkv/server/
+      - ./config:/home/xcq/imkv/config
+      - ./data:/data
+      - ./tmp/memec:/home/xcq/tmp
+      #- ./server/config:/home/xcq/imkv/server/config
+    ports:
+      - "9113:9111"
+      - "19113:22"
+      #- "4803:4803"
+    depends_on:
+      - coordinator
+      - s1
+    cap_add:
+      - NET_ADMIN
+    networks:
+      imkv_net:
+        ipv4_address: 172.19.0.5
+    tty: true
+    command: ["bash","start-server.sh"]
+
+  s4:
+    build: ./server
+    image: s4:v1     #由dockerfile临时生成的镜像名字
+    deploy:
+      resources:
+        limits:
+          memory: 4G
+    user: xcq
+    container_name: s4
+    hostname: s4
+    tmpfs:
+      - /home/xcq/tmp/s4:rw,size=2g,uid=1000,gid=1000,mode=777
+    volumes:
+      - ./server:/home/xcq/imkv/server
+      - ./config:/home/xcq/imkv/config
+      - ./data:/data
+      - ./tmp/memec:/home/xcq/tmp
+      #- ./server/config:/home/xcq/imkv/server/config
+    ports:
+      - "9114:9111"
+      - "19114:22"
+     # - "4803:4803"
+    depends_on:
+      - coordinator
+      - s1
+    cap_add:
+      - NET_ADMIN
+    networks:
+      imkv_net:
+        ipv4_address: 172.19.0.6
+    tty: true
+    command: ["bash","start-server.sh"]
+
+  s5:
+    build: ./server
+    image: s5:v1     #由dockerfile临时生成的镜像名字
+    deploy:
+      resources:
+        limits:
+          memory: 4G
+    user: xcq
+    container_name: s5
+    hostname: s5
+    tmpfs:
+      - /home/xcq/tmp/s5:rw,size=2g,uid=1000,gid=1000,mode=777
+    volumes:
+      - ./server:/home/xcq/imkv/server/
+      - ./config:/home/xcq/imkv/config
+      - ./data:/data
+      - ./tmp/memec:/home/xcq/tmp
+      #- ./server/config:/home/xcq/imkv/server/config
+    ports:
+      - "9115:9111"
+      - "19115:22"
+      #- "4803:4803"
+    depends_on:
+      - coordinator
+      - s1
+    cap_add:
+      - NET_ADMIN
+    networks:
+      imkv_net:
+        ipv4_address: 172.19.0.7
+    tty: true
+    command: ["bash","start-server.sh"]
+
+  s6:
+    build: ./server
+    image: s6:v1     #由dockerfile临时生成的镜像名字
+    deploy:
+      resources:
+        limits:
+          memory: 4G
+    user: xcq
+    container_name: s6
+    hostname: s6
+    tmpfs:
+      - /home/xcq/tmp/s6:rw,size=2g,uid=1000,gid=1000,mode=777
+    volumes:
+      - ./server:/home/xcq/imkv/server/
+      - ./config:/home/xcq/imkv/config
+      - ./data:/data
+      - ./tmp/memec:/home/xcq/tmp
+      #- ./server/config:/home/xcq/imkv/server/config
+    ports:
+      - "9116:9111"
+      - "19116:22"
+      #- "4803:4803"
+    depends_on:
+      - coordinator
+      - s1
+    cap_add:
+      - NET_ADMIN
+    networks:
+      imkv_net:
+        ipv4_address: 172.19.0.8
+    tty: true
+    command: ["bash","start-server.sh"]
+
+  s7:
+    build: ./server
+    image: s7:v1     #由dockerfile临时生成的镜像名字
+    deploy:
+      resources:
+        limits:
+          memory: 4G
+    user: xcq
+    container_name: s7
+    hostname: s7
+    tmpfs:
+      - /home/xcq/tmp/s7:rw,size=2g,uid=1000,gid=1000,mode=777
+    volumes:
+      - ./server:/home/xcq/imkv/server/
+      - ./config:/home/xcq/imkv/config
+      - ./data:/data
+      - ./tmp/memec:/home/xcq/tmp
+      #- ./server/config:/home/xcq/imkv/server/config
+    ports:
+      - "9117:9111"
+      - "19117:22"
+      #- "4803:4803"
+    depends_on:
+      - coordinator
+      - s1
+    cap_add:
+      - NET_ADMIN
+    networks:
+      imkv_net:
+        ipv4_address: 172.19.0.9
+    tty: true
+    command: ["bash","start-server.sh"]
+
+  s8:
+    build: ./server
+    image: s8:v1     #由dockerfile临时生成的镜像名字
+    deploy:
+      resources:
+        limits:
+          memory: 4G
+    user: xcq
+    container_name: s8
+    hostname: s8
+    tmpfs:
+      - /home/xcq/tmp/s8:rw,size=2g,uid=1000,gid=1000,mode=777
+    volumes:
+      - ./server:/home/xcq/imkv/server/
+      - ./config:/home/xcq/imkv/config
+      - ./data:/data
+      - ./tmp/memec:/home/xcq/tmp
+    ports:
+      - "9118:9111"
+      - "19118:22"
+     # - "4803:4803"
+    depends_on:
+      - coordinator
+      - s1
+    cap_add:
+      - NET_ADMIN
+    networks:
+      imkv_net:
+        ipv4_address: 172.19.0.10
+    tty: true
+    command: ["bash","start-server.sh"]
+
+  s9:
+    build: ./server
+    image: s9:v1     #由dockerfile临时生成的镜像名字
+    deploy:
+      resources:
+        limits:
+          memory: 4G
+    user: xcq
+    container_name: s9
+    hostname: s9
+    tmpfs:
+      - /home/xcq/tmp/s9:rw,size=2g,uid=1000,gid=1000,mode=777
+    volumes:
+      - ./server:/home/xcq/imkv/server/
+      - ./config:/home/xcq/imkv/config
+      - ./data:/data
+      - ./tmp/memec:/home/xcq/tmp
+    ports:
+      - "9119:9111"
+      - "19119:22"
+      # - "4803:4803"
+    depends_on:
+      - coordinator
+      - s1
+    cap_add:
+      - NET_ADMIN
+    networks:
+      imkv_net:
+        ipv4_address: 172.19.0.11
+    tty: true
+    command: ["bash","start-server.sh"]
+
+  s10:
+    build: ./server
+    image: s10:v1     #由dockerfile临时生成的镜像名字
+    deploy:
+      resources:
+        limits:
+          memory: 4G
+    user: xcq
+    container_name: s10
+    hostname: s10
+    tmpfs:
+      - /home/xcq/tmp/s10:rw,size=2g,uid=1000,gid=1000,mode=777
+    volumes:
+      - ./server:/home/xcq/imkv/server/
+      - ./config:/home/xcq/imkv/config
+      - ./data:/data
+      - ./tmp/memec:/home/xcq/tmp
+    ports:
+      - "9120:9111"
+      - "19120:22"
+      # - "4803:4803"
+    depends_on:
+      - coordinator
+      - s1
+    cap_add:
+      - NET_ADMIN
+    networks:
+      imkv_net:
+        ipv4_address: 172.19.0.12
+    tty: true
+    command: [ "bash","start-server.sh" ]
+
+  s11:
+    build: ./server
+    image: s11:v1     #由dockerfile临时生成的镜像名字
+    deploy:
+      resources:
+        limits:
+          memory: 4G
+    user: xcq
+    container_name: s11
+    hostname: s11
+    tmpfs:
+      - /home/xcq/tmp/s11:rw,size=2g,uid=1000,gid=1000,mode=777
+    volumes:
+      - ./server:/home/xcq/imkv/server/
+      - ./config:/home/xcq/imkv/config
+      - ./data:/data
+      - ./tmp/memec:/home/xcq/tmp
+      #- ./server/config:/home/xcq/imkv/server/config
+    ports:
+      - "9121:9111"
+      - "19121:22"
+      #- "4803:4803"
+    depends_on:
+      - coordinator
+      - s1
+    cap_add:
+      - NET_ADMIN
+    networks:
+      imkv_net:
+        ipv4_address: 172.19.0.13
+    tty: true
+    command: [ "bash","start-server.sh" ]
+
+  s12:
+    build: ./server
+    image: s12:v1     #由dockerfile临时生成的镜像名字
+    deploy:
+      resources:
+        limits:
+          memory: 4G
+    user: xcq
+    container_name: s12
+    hostname: s12
+    tmpfs:
+      - /home/xcq/tmp/s12:rw,size=2g,uid=1000,gid=1000,mode=777
+    volumes:
+      - ./server:/home/xcq/imkv/server/
+      - ./config:/home/xcq/imkv/config
+      - ./data:/data
+      - ./tmp/memec:/home/xcq/tmp
+      #- ./server/config:/home/xcq/imkv/server/config
+    ports:
+      - "9122:9111"
+      - "19122:22"
+      #- "4803:4803"
+    depends_on:
+      - coordinator
+      - s1
+    cap_add:
+      - NET_ADMIN
+    networks:
+      imkv_net:
+        ipv4_address: 172.19.0.14
+    tty: true
+    command: [ "bash","start-server.sh" ]
+
+  s13:
+    build: ./server
+    image: s13:v1     #由dockerfile临时生成的镜像名字
+    deploy:
+      resources:
+        limits:
+          memory: 4G
+    user: xcq
+    container_name: s13
+    hostname: s13
+    tmpfs:
+      - /home/xcq/tmp/s13:rw,size=2g,uid=1000,gid=1000,mode=777
+    volumes:
+      - ./server:/home/xcq/imkv/server/
+      - ./config:/home/xcq/imkv/config
+      - ./data:/data
+      - ./tmp/memec:/home/xcq/tmp
+      #- ./server/config:/home/xcq/imkv/server/config
+    ports:
+      - "9123:9111"
+      - "19123:22"
+      #- "4803:4803"
+    depends_on:
+      - coordinator
+      - s1
+    cap_add:
+      - NET_ADMIN
+    networks:
+      imkv_net:
+        ipv4_address: 172.19.0.15
+    tty: true
+    command: [ "bash","start-server.sh" ]
+
+  s14:
+    build: ./server
+    image: s14:v1     #由dockerfile临时生成的镜像名字
+    deploy:
+      resources:
+        limits:
+          memory: 4G
+    user: xcq
+    container_name: s14
+    hostname: s14
+    tmpfs:
+      - /home/xcq/tmp/s14:rw,size=2g,uid=1000,gid=1000,mode=777
+    volumes:
+      - ./server:/home/xcq/imkv/server/
+      - ./config:/home/xcq/imkv/config
+      - ./data:/data
+      - ./tmp/memec:/home/xcq/tmp
+    ports:
+      - "9124:9111"
+      - "19124:22"
+      # - "4803:4803"
+    depends_on:
+      - coordinator
+      - s1
+    cap_add:
+      - NET_ADMIN
+    networks:
+      imkv_net:
+        ipv4_address: 172.19.0.16
+    tty: true
+    command: [ "bash","start-server.sh" ]
+
+  s15:
+    build: ./server
+    image: s15:v1     #由dockerfile临时生成的镜像名字
+    deploy:
+      resources:
+        limits:
+          memory: 4G
+    user: xcq
+    container_name: s15
+    hostname: s15
+    tmpfs:
+      - /home/xcq/tmp/s15:rw,size=2g,uid=1000,gid=1000,mode=777
+    volumes:
+      - ./server:/home/xcq/imkv/server/
+      - ./config:/home/xcq/imkv/config
+      - ./data:/data
+      - ./tmp/memec:/home/xcq/tmp
+    ports:
+      - "9125:9111"
+      - "19125:22"
+      # - "4803:4803"
+    depends_on:
+      - coordinator
+      - s1
+    cap_add:
+      - NET_ADMIN
+    networks:
+      imkv_net:
+        ipv4_address: 172.19.0.17
+    tty: true
+    command: [ "bash","start-server.sh" ]
+
+  s16:
+    build: ./server
+    image: s16:v1     #由dockerfile临时生成的镜像名字
+    deploy:
+      resources:
+        limits:
+          memory: 4G
+    user: xcq
+    container_name: s16
+    hostname: s16
+    tmpfs:
+      - /home/xcq/tmp/s16:rw,size=2g,uid=1000,gid=1000,mode=777
+    volumes:
+      - ./server:/home/xcq/imkv/server/
+      - ./config:/home/xcq/imkv/config
+      - ./data:/data
+      - ./tmp/memec:/home/xcq/tmp
+    ports:
+      - "9126:9111"
+      - "19126:22"
+      # - "4803:4803"
+    depends_on:
+      - coordinator
+      - s1
+    cap_add:
+      - NET_ADMIN
+    networks:
+      imkv_net:
+        ipv4_address: 172.19.0.18
+    tty: true
+    command: [ "bash","start-server.sh" ]
+
+  proxy1:
+    build: ./client
+    image: proxy1:v1    #由dockerfile临时生成的镜像名字
+    deploy:
+      resources:
+        limits:
+          memory: 4G
+    user: xcq
+    container_name: proxy1
+    tmpfs:
+      - /home/xcq/tmp/proxy1:rw,size=2g,uid=1000,gid=1000,mode=777
+    hostname: proxy1
+    ports:
+      - "9130:9112"
+      - "19130:22"
+     # - "4803:4803"
+    volumes:
+      - ./client:/home/xcq/imkv/client
+      - ./config:/home/xcq/imkv/config
+      - ./ycsb:/home/xcq/imkv/ycsb
+      - ./degraded:/home/xcq/imkv/degraded
+      #- ./client/config:/home/xcq/imkv/client/config
+    tty: true
+    depends_on:
+      - coordinator
+      - s1
+      - s2
+      - s3
+      - s4
+      - s5
+      - s6
+      - s7
+      - s8
+      - s9
+      - s10
+      - s11
+      - s12
+      - s13
+      - s14
+      - s15
+      - s16
+    networks:
+      imkv_net:
+        ipv4_address: 172.19.0.20
+    command: ["bash","start-client.sh"]
+
+  proxy2:
+    build: ./client
+    image: proxy2:v1    #由dockerfile临时生成的镜像名字
+    deploy:
+      resources:
+        limits:
+          memory: 4G
+    user: xcq
+    container_name: proxy2
+    tmpfs:
+      - /home/xcq/tmp/proxy2:rw,size=2g,uid=1000,gid=1000,mode=777
+    hostname: proxy2
+    ports:
+      - "9131:9112"
+      - "19131:22"
+      # - "4803:4803"
+    volumes:
+      - ./client:/home/xcq/imkv/client
+      - ./config:/home/xcq/imkv/config
+      - ./ycsb:/home/xcq/imkv/ycsb
+      - ./degraded:/home/xcq/imkv/degraded
+      #- ./client/config:/home/xcq/imkv/client/config
+    tty: true
+    depends_on:
+      - coordinator
+      - s1
+      - s2
+      - s3
+      - s4
+      - s5
+      - s6
+      - s7
+      - s8
+      - s9
+      - s10
+      - s11
+      - s12
+      - s13
+      - s14
+      - s15
+      - s16
+    networks:
+      imkv_net:
+        ipv4_address: 172.19.0.21
+    command: [ "bash","start-client.sh" ]
+
+  proxy3:
+    build: ./client
+    image: proxy3:v1    #由dockerfile临时生成的镜像名字
+    deploy:
+      resources:
+        limits:
+          memory: 2G
+    user: xcq
+    tmpfs:
+      - /home/xcq/tmp/proxy3:rw,size=2g,uid=1000,gid=1000,mode=777
+    container_name: proxy3
+    hostname: proxy3
+    ports:
+      - "9132:9112"
+      - "19132:22"
+      # - "4803:4803"
+    volumes:
+      - ./client:/home/xcq/imkv/client
+      - ./config:/home/xcq/imkv/config
+      - ./ycsb:/home/xcq/imkv/ycsb
+      - ./degraded:/home/xcq/imkv/degraded
+      #- ./client/config:/home/xcq/imkv/client/config
+    tty: true
+    depends_on:
+      - coordinator
+      - s1
+      - s2
+      - s3
+      - s4
+      - s5
+      - s6
+      - s7
+      - s8
+      - s9
+      - s10
+      - s11
+      - s12
+      - s13
+      - s14
+      - s15
+      - s16
+    networks:
+      imkv_net:
+        ipv4_address: 172.19.0.22
+    command: ["bash","start-client.sh"]
+
+  proxy4:
+    build: ./client
+    image: proxy4:v1    #由dockerfile临时生成的镜像名字
+    deploy:
+      resources:
+        limits:
+          memory: 2G
+    user: xcq
+    container_name: proxy4
+    tmpfs:
+      - /home/xcq/tmp/proxy4:rw,size=2g,uid=1000,gid=1000,mode=777
+    hostname: proxy4
+    ports:
+      - "9133:9112"
+      - "19133:22"
+      # - "4803:4803"
+    volumes:
+      - ./client:/home/xcq/imkv/client
+      - ./config:/home/xcq/imkv/config
+      - ./ycsb:/home/xcq/imkv/ycsb
+      - ./degraded:/home/xcq/imkv/degraded
+      #- ./client/config:/home/xcq/imkv/client/config
+    tty: true
+    depends_on:
+      - coordinator
+      - s1
+      - s2
+      - s3
+      - s4
+      - s5
+      - s6
+      - s7
+      - s8
+      - s9
+      - s10
+      - s11
+      - s12
+      - s13
+      - s14
+      - s15
+      - s16
+    networks:
+      imkv_net:
+        ipv4_address: 172.19.0.23
+    command: ["bash","start-client.sh"]
+
+networks:
+  imkv_net:
+    driver: bridge
+    ipam:
+     config:
+       - subnet: 172.19.0.0/16
