@@ -41,7 +41,7 @@ Researchers can use the  provided workload scripts in throughput directory to do
    And further more workload via YCSB in GitHub - brianfrankcooper/YCSB: Yahoo! Cloud Serving Benchmark.
 ```shell
    $ cd imkv_cluster/ycsb/
-   $ ../test/singleycsb.sh
+   $ ../degraded/singleycsb.sh
 ```
 If you encounter error "Segmentation fault (core dumped)" , you can restart the docker cluster (docker-compose down & docker-compose up).
 
