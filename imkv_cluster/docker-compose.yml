@@ -2,7 +2,7 @@ version: '3'
 services:
   coordinator:
     build: ./coordinator
-    image: coor:v1       #由dockerfile临时生成的镜像名字
+    image: coor:v1        
     deploy:
       resources:
         limits:
@@ -25,7 +25,7 @@ services:
 
   s1:
     build: ./server
-    image: s1:v1     #由dockerfile临时生成的镜像名字
+    image: s1:v1      
     deploy:
       resources:
         limits:
@@ -57,7 +57,7 @@ services:
 
   s2:
     build: ./server
-    image: s2:v1     #由dockerfile临时生成的镜像名字
+    image: s2:v1      
     deploy:
       resources:
         limits:
@@ -90,7 +90,7 @@ services:
 
   s3:
     build: ./server
-    image: s3:v1        #由dockerfile临时生成的镜像名字
+    image: s3:v1         
     deploy:
       resources:
         limits:
@@ -123,7 +123,7 @@ services:
 
   s4:
     build: ./server
-    image: s4:v1     #由dockerfile临时生成的镜像名字
+    image: s4:v1      
     deploy:
       resources:
         limits:
@@ -156,7 +156,7 @@ services:
 
   s5:
     build: ./server
-    image: s5:v1     #由dockerfile临时生成的镜像名字
+    image: s5:v1      
     deploy:
       resources:
         limits:
@@ -189,7 +189,7 @@ services:
 
   s6:
     build: ./server
-    image: s6:v1     #由dockerfile临时生成的镜像名字
+    image: s6:v1      
     deploy:
       resources:
         limits:
@@ -222,7 +222,7 @@ services:
 
   s7:
     build: ./server
-    image: s7:v1     #由dockerfile临时生成的镜像名字
+    image: s7:v1      
     deploy:
       resources:
         limits:
@@ -255,7 +255,7 @@ services:
 
   s8:
     build: ./server
-    image: s8:v1     #由dockerfile临时生成的镜像名字
+    image: s8:v1      
     deploy:
       resources:
         limits:
@@ -287,7 +287,7 @@ services:
 
   s9:
     build: ./server
-    image: s9:v1     #由dockerfile临时生成的镜像名字
+    image: s9:v1      
     deploy:
       resources:
         limits:
@@ -319,7 +319,7 @@ services:
 
   s10:
     build: ./server
-    image: s10:v1     #由dockerfile临时生成的镜像名字
+    image: s10:v1      
     deploy:
       resources:
         limits:
@@ -351,7 +351,7 @@ services:
 
   s11:
     build: ./server
-    image: s11:v1     #由dockerfile临时生成的镜像名字
+    image: s11:v1      
     deploy:
       resources:
         limits:
@@ -384,7 +384,7 @@ services:
 
   s12:
     build: ./server
-    image: s12:v1     #由dockerfile临时生成的镜像名字
+    image: s12:v1      
     deploy:
       resources:
         limits:
@@ -417,7 +417,7 @@ services:
 
   s13:
     build: ./server
-    image: s13:v1     #由dockerfile临时生成的镜像名字
+    image: s13:v1      
     deploy:
       resources:
         limits:
@@ -450,7 +450,7 @@ services:
 
   s14:
     build: ./server
-    image: s14:v1     #由dockerfile临时生成的镜像名字
+    image: s14:v1      
     deploy:
       resources:
         limits:
@@ -482,7 +482,7 @@ services:
 
   s15:
     build: ./server
-    image: s15:v1     #由dockerfile临时生成的镜像名字
+    image: s15:v1      
     deploy:
       resources:
         limits:
@@ -514,7 +514,7 @@ services:
 
   s16:
     build: ./server
-    image: s16:v1     #由dockerfile临时生成的镜像名字
+    image: s16:v1      
     deploy:
       resources:
         limits:
@@ -546,7 +546,7 @@ services:
 
   proxy1:
     build: ./client
-    image: proxy1:v1    #由dockerfile临时生成的镜像名字
+    image: proxy1:v1     
     deploy:
       resources:
         limits:
@@ -592,7 +592,7 @@ services:
 
   proxy2:
     build: ./client
-    image: proxy2:v1    #由dockerfile临时生成的镜像名字
+    image: proxy2:v1     
     deploy:
       resources:
         limits:
@@ -638,7 +638,7 @@ services:
 
   proxy3:
     build: ./client
-    image: proxy3:v1    #由dockerfile临时生成的镜像名字
+    image: proxy3:v1     
     deploy:
       resources:
         limits:
@@ -684,7 +684,7 @@ services:
 
   proxy4:
     build: ./client
-    image: proxy4:v1    #由dockerfile临时生成的镜像名字
+    image: proxy4:v1     
     deploy:
       resources:
         limits:
