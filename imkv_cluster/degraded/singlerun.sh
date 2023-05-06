@@ -8,8 +8,8 @@ fi
 
 ID=$(ifconfig eth0 | grep 'inet ' | awk '{print $2}'| sed 's/172.19.0.2//g')
 
-FIELD_LENGTH=8192
-RECORD_COUNT=500000
+FIELD_LENGTH=4096
+RECORD_COUNT=5000
 INSERT_COUNT=$(expr ${RECORD_COUNT} \/ 1)
 OPERATION_COUNT=$(expr ${RECORD_COUNT} \/ 1)
 if [ $ID == 0 ]; then
@@ -17,7 +17,7 @@ if [ $ID == 0 ]; then
 fi
 
 ${YCSB_PATH}/bin/ycsb \
-	run memec \
+	run mkvec \
 	-P ${YCSB_PATH}/workloads/$2 \
 	-p fieldcount=1 \
 	-p readallfields=false \
@@ -30,7 +30,7 @@ ${YCSB_PATH}/bin/ycsb \
   -p insertcount=${INSERT_COUNT} \
 	-p operationcount=${OPERATION_COUNT} \
 	-p threadcount=$1 \
-	-p memec.host=$(hostname -I | sed 's/^.*\(172\.19\.0\.[0-9]*\).*$/\1/g') \
-	-p memec.port=9112 \
-	-p memec.key_size=20 \
-	-p memec.chunk_size=8192
+	-p imkvec.host=$(hostname -I | sed 's/^.*\(172\.19\.0\.[0-9]*\).*$/\1/g') \
+	-p imkvec.port=9112 \
+	-p imkvec.key_size=20 \
+	-p imkvec.chunk_size=4096
